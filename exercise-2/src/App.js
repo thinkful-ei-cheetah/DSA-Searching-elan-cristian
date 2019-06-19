@@ -9,33 +9,25 @@ class App extends React.Component {
     binaryResult: ''
   }
 
-  handleBinarySearch = (arr, value, start=0, end=arr.length) => {
-    let steps = 1
+  handleBinarySearch = (arr, value, start=0, end=arr.length, count) => {
+    count = count || 0
     const sortedArr = arr.sort()
-    let middle = Math.floor((start+end) / 2)
-    let item = sortedArr[middle]
+    let index = Math.floor((start+end) / 2)
+    let item = sortedArr[index]
 
     if(start > end) return -1
 
     if (item === value) {
-      this.setState({ binaryResult: `${value} was found after ${steps} step/s` })
-      return 1
+      this.setState({ binaryResult: `${value} was found after ${count} step/s` })
+      return
     }
 
     else if (item < value) {
-      steps++
-      console.log(steps)
-      return this.handleBinarySearch(sortedArr, value, middle+1, end)
+      return this.handleBinarySearch(sortedArr, value, index+1, end, count+=1)
     }
     
     else if (item > value) {
-      steps++
-      console.log(steps)
-      return this.handleBinarySearch(sortedArr, value, start, middle-1)
-    }
-
-    else {
-      return 1
+      return this.handleBinarySearch(sortedArr, value, start, index-1, count+=1)
     }
   }
 
