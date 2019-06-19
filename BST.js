@@ -153,9 +153,11 @@ class BinarySearchTree {
 
   bfs(values=[]) {
     const queue = new Queue()
-
+    queue.enqueue(this)
+    console.log('queue', queue.length)
     while (queue.length) {
       const node = queue.dequeue()
+      console.log('node', node)
       values.push(node.value)
 
       if (node.left) {

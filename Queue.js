@@ -9,6 +9,7 @@ class Queue {
   constructor() {
     this.first = null;
     this.last = null;
+    this.length = 0;
   }
 
   enqueue(data) {
@@ -21,7 +22,7 @@ class Queue {
     if(this.last) {
       this.last.next = node;
     }
-
+    this.length++
     this.last = node;
   }
 
@@ -35,6 +36,7 @@ class Queue {
     if(node === this.last) {
       this.last = null;
     }
+    this.length--
     return node.value;
   }
 }

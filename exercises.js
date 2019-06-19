@@ -56,7 +56,40 @@ function main() {
 
 let tree = main()
 
-console.log(tree._inOrder())
-console.log(tree._preOrder())
-console.log(tree._postOrder())
+// console.log(tree._inOrder())
+// console.log(tree._preOrder())
+// console.log(tree._postOrder())
 
+// 6. Commanding Officer
+
+function main2() {
+  let commanderTree = new BST(5, 'Captain Pickard')
+  commanderTree.insert(3, 'Commander Riker')
+  commanderTree.insert(6, 'Commander Data')
+  commanderTree.insert(2, 'Lt. Cmdr. Worf')
+  commanderTree.insert(4, 'Lt. Cmdr. LaForge')
+  commanderTree.insert(8, 'Lt. Cmdr. Crusher')
+  commanderTree.insert(1, 'Lieutenant security-officer')
+  commanderTree.insert(7, 'Lieutenant Selar')
+  return commanderTree
+}
+
+let cTree = main2()
+
+// console.log(cTree)
+// console.log(cTree.bfs())
+
+// 7. Max Profit
+
+
+function findMaxProfit(arr) {
+  let profit = 0
+  for (let i = 0; i < arr.length; i++) {
+    if(arr[i+1] - arr[i] > profit) {
+      profit = arr[i+1] - arr[i]
+    }
+  }
+  return profit
+}
+
+console.log(findMaxProfit([128, 97, 121, 123, 98, 97, 105]))
