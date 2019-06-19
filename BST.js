@@ -115,16 +115,40 @@ class BinarySearchTree {
     return this.left._findMin()
   }
 
-  dfs(values=[]) {
+  _inOrder(values=[]) {
     if (this.left) {
-      values = this.left.dfs(values)
+      values = this.left._inOrder(values)
     }
-    values.push(this.value)
+    values.push(this.key)
 
     if (this.right) {
-      values = this.right.dfs(values)
+      values = this.right._inOrder(values)
     }
     return values
+  }
+
+  _preOrder(values=[]) {
+    values.push(this.key)
+    if (this.left) {
+      values = this.left._preOrder(values)
+    }
+
+    if (this.right) {
+      values = this.right._preOrder(values)
+    }
+    return values;
+  }
+
+  _postOrder(values=[]) {
+    if (this.left) {
+      values = this.left._postOrder(values)
+    }
+
+    if (this.right) {
+      values = this.right._postOrder(values)
+    }
+    values.push(this.key)
+    return values;
   }
 
   bfs(values=[]) {
@@ -146,3 +170,5 @@ class BinarySearchTree {
     return values
   }
 }
+
+module.exports = BinarySearchTree;

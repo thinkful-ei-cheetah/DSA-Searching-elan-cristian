@@ -15,3 +15,13 @@ new middle is 15
 16 > 15 so our list is 17, 18
 new middle is 17
 16 < 17 so we must be missing
+
+searching a bst: 
+
+1.
+in order: [14 15 19 25 27 35 79 89 90 91]
+pre order: [35 25 15 14 19 27 89 79 91 90]
+post order: [14 19 15 27 25 79 90 91 89 35]
+
+2.
+pre order: [8 6 5 7 10 9 11]
