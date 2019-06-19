@@ -1,0 +1,17 @@
+1a. [3, 5, 6, 8, 11, 12, 14, 15, 17, 18] -> 8
+
+middle is 11 
+8 < 11 so our list is now 3, 5, 6, 8
+new middle is 5
+8 > 5 so our new list is 6, 8
+new middle is 6
+6 < 8 so we get rid of six, leaving us with 8
+
+1b. [3, 5, 6, 8, 11, 12, 14, 15, 17, 18] -> 16
+
+middle is 11
+16 > 11 so our list is 12, 14, 15, 17, 18
+new middle is 15
+16 > 15 so our list is 17, 18
+new middle is 17
+16 < 17 so we must be missing
